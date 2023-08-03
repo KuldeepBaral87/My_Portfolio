@@ -8,6 +8,10 @@
     <title>Bara Kuldeep</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="Resources/Images/favicon.ico" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    /> -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Great Vibes"
@@ -35,419 +39,430 @@
   </head>
 
   <body>
-    <nav>
-      <logo><img src="Resources/Images/bkLogo.png" /></logo>
-      <input type="checkbox" id="clickk" />
-      <label for="clickk" class="menu-btn">
-        <i class="fa fa-bars"></i>
-      </label>
-      <ul id="pageList" class="n">
-        <li onclick="hidee()"><a href="#Home">Home</a></li>
-        <li onclick="hidee()"><a href="#Skills">Skills</a></li>
-        <li onclick="hidee()"><a href="#Projects">Projects</a></li>
-        <li onclick="hidee()"><a href="#Hobbies">Hobbies</a></li>
+    <div id="main">
+      <nav>
+        <logo><img src="Resources/Images/bkLogo.png" /></logo>
+        <input type="checkbox" id="clickk" />
+        <label for="clickk" class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </label>
+        <ul id="pageList" class="n">
+          <li onclick="hidee()"><a href="#Home">Home</a></li>
+          <li onclick="hidee()"><a href="#Skills">Skills</a></li>
+          <li onclick="hidee()"><a href="#Projects">Projects</a></li>
+          <li onclick="hidee()"><a href="#Hobbies">Hobbies</a></li>
 
-        <li onclick="hidee()"><a href="#Contactinfo">Contact info</a></li>
-      </ul>
-    </nav>
-    <script>
-      function hidee() {
-        document.getElementById("clickk").checked = false;
-      }
-    </script>
-
-    <container id="Home">
-      <br />
-      <br />
-      <img src="Resources/Images/me2.png" alt="Baral Kuldeep image" />
-
-      <p class="h">
-        Hello, My name is <br />Baral Kuldeep<br />
-        <span style="font-size: 1rem">(Frontend Developer)</span
-        ><a href="Resources/baral kuldeep.pdf" class="resume"
-          >Download Resume</a
-        >
-      </p>
-
-      <div class="appeal1">
-        <div class="appeal"></div>
-        <div class="appeal"></div>
-        <div class="appeal"></div>
-        <div class="appeal">H</div>
-        <div class="appeal">I</div>
-        <div class="appeal">I</div>
-      </div>
-    </container>
-
-    <!-- ------------Skilss start -->
-    <container id="Skills">
-      <div class="plane">
-        <img
-          src="Resources/Images/aeroplane.png"
-          class="imgg"
-          id="plane"
-          alt="plane image"
-        />
-      </div>
-
-      <i1 id="skillss"><h1>Skills</h1></i1>
-
-      <innerContainer>
-        <i2
-          >Fluent in:
-          <ul>
-            <li>JAVA</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>SQL</li>
-          </ul></i2
-        >
-        <i3
-          >Familiar with:
-          <ul>
-            <li>Android Studio</li>
-            <li>Machine Learning with python</li>
-            <li>python</li>
-            <li>C</li>
-          </ul>
-        </i3>
-      </innerContainer>
-
-      <grass id="grass">
-        <img src="Resources/Images/grass1.png" id="grasss" alt="grass" />
-      </grass>
+          <li onclick="hidee()"><a href="#Contactinfo">Contact info</a></li>
+        </ul>
+      </nav>
       <script>
-        var s = document.getElementById("plane");
-
-        var gr = document.getElementById("skillss");
-        gr.addEventListener("click", function () {
-          s.classList.add("imgg2");
-          s.classList.remove("imgg");
-
-          setTimeout(function () {
-            s.classList.add("imgg");
-            s.classList.remove("imgg2");
-          }, 5000);
-        });
+        function hidee() {
+          document.getElementById("clickk").checked = false;
+        }
       </script>
-    </container>
-    <!-- -----Skill over -->
 
-    <!-- ------Project start -->
-    <container id="Projects">
-      <div class="temp">
-        <h1>Projects</h1>
-        <innerContainer2>
-          <projectcard id="p1">
-            <imageHolder
-              ><wrp>
-                <img
-                  src="Resources/Images/bloodbank.png"
-                  alt="projects image"
-                />
-                <img src="Resources/Images/BB2.png" alt="projects image" />
-                <img src="Resources/Images/BB3.png" alt="projects image" />
-                <img src="Resources/Images/BB4.png" alt="projects image" />
-                <img
-                  src="Resources/Images/bloodbank.png"
-                  alt="projects image"
-                />
-              </wrp>
-            </imageHolder>
-            <h3>Blood Bank Management system</h3>
-            <hr />
-            <br />
+      <container id="Home">
+        <br />
+        <br />
+        <img src="Resources/Images/me2.png" alt="Baral Kuldeep image" />
+
+        <p class="h">
+          Hello, My name is <br />Baral Kuldeep<br />
+          <span style="font-size: 1rem">(Frontend Developer)</span
+          ><a href="Resources/baral kuldeep.pdf" class="resume"
+            >Download Resume</a
+          >
+        </p>
+
+        <div class="appeal1">
+          <div class="appeal"></div>
+          <div class="appeal"></div>
+          <div class="appeal"></div>
+          <div class="appeal">H</div>
+          <div class="appeal">I</div>
+          <div class="appeal">I</div>
+        </div>
+      </container>
+
+      <!-- ------------Skilss start -->
+      <container id="Skills">
+        <div class="plane">
+          <img
+            src="Resources/Images/aeroplane.png"
+            class="imgg"
+            id="plane"
+            alt="plane image"
+          />
+        </div>
+
+        <i1 id="skillss"><h1>Skills</h1></i1>
+
+        <innerContainer>
+          <i2
+            >Fluent in:
+            <ul>
+              <li>JAVA</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>SQL</li>
+            </ul></i2
+          >
+          <i3
+            >Familiar with:
+            <ul>
+              <li>Android Studio</li>
+              <li>Machine Learning with python</li>
+              <li>python</li>
+              <li>C</li>
+            </ul>
+          </i3>
+        </innerContainer>
+
+        <grass id="grass">
+          <img src="Resources/Images/grass1.png" id="grasss" alt="grass" />
+        </grass>
+        <script>
+          var s = document.getElementById("plane");
+
+          var gr = document.getElementById("skillss");
+          gr.addEventListener("click", function () {
+            s.classList.add("imgg2");
+            s.classList.remove("imgg");
+
+            setTimeout(function () {
+              s.classList.add("imgg");
+              s.classList.remove("imgg2");
+            }, 5000);
+          });
+        </script>
+      </container>
+      <!-- -----Skill over -->
+
+      <!-- ------Project start -->
+      <container id="Projects">
+        <div class="temp">
+          <h1>Projects</h1>
+          <innerContainer2>
+            <projectcard id="p1">
+              <imageHolder
+                ><wrp>
+                  <img
+                    src="Resources/Images/bloodbank.png"
+                    alt="projects image"
+                  />
+                  <img src="Resources/Images/BB2.png" alt="projects image" />
+                  <img src="Resources/Images/BB3.png" alt="projects image" />
+                  <img src="Resources/Images/BB4.png" alt="projects image" />
+                  <img
+                    src="Resources/Images/bloodbank.png"
+                    alt="projects image"
+                  />
+                </wrp>
+              </imageHolder>
+              <h3>Blood Bank Management system</h3>
+              <hr />
+              <br />
+              <p>
+                This was made using:<br />
+                Frontend:HTML,CSS,JavaScript<br />
+                Backend:PHP,mySQL<br /><br />
+              </p>
+              <a href="http://mykproject.000webhostapp.com/index.html"
+                >Go to site</a
+              >
+            </projectcard>
+            <projectcard id="p2">
+              <imageHolder
+                ><wrp>
+                  <img
+                    src="Resources/Images/glsChatbot.png"
+                    alt="projects image"
+                  />
+                  <img
+                    src="Resources/Images/glsChatbot2.png"
+                    alt="projects image"
+                  />
+                  <img
+                    src="Resources/Images/glsChatbot3.png"
+                    alt="projects image"
+                  />
+                  <img
+                    src="Resources/Images/glsChatbot4.png"
+                    alt="projects image"
+                  />
+                  <img
+                    src="Resources/Images/glsChatbot5.png"
+                    alt="projects image"
+                  />
+                </wrp>
+              </imageHolder>
+
+              <h3>Chat bot</h3>
+              <hr />
+              <br />
+              <p>
+                This was made using:<br />
+                Frontend:HTML,CSS,JavaScript<br />
+                Backend:Python,JSON,mySQL,Flask
+              </p>
+            </projectcard>
+            <projectcard id="p3">
+              <img src="Resources/Images/glslogo.png" alt="projects image" />
+              <h3>GLS ICT website</h3>
+              <hr />
+              <br />
+              <p>
+                This was made using:<br />
+                Frontend:HTML,CSS,JAVASCRIPT<br />
+                Backend:PHP,mySql
+              </p>
+            </projectcard>
+          </innerContainer2>
+        </div>
+        <rocket>
+          <img
+            src="Resources/Images/rocket.gif"
+            alt="rocket"
+            id="rocket"
+            class="rstay"
+          />
+        </rocket>
+        <launchpad>
+          <img src="Resources/Images/launchpad.png" alt="launchpad" id="pad" />
+        </launchpad>
+        <!-- for launching rocket adding class with animation to it -->
+        <script>
+          var r = document.getElementById("rocket");
+
+          var pad = document.getElementById("pad");
+          pad.addEventListener("click", function () {
+            r.classList.add("rlaunch");
+            setTimeout(function () {
+              r.classList.remove("rlaunch");
+            }, 4000);
+          });
+        </script>
+      </container>
+
+      <!-- ---------------------------------Hobbies -->
+      <container id="Hobbies">
+        <h1>Hobbies</h1>
+        <main>
+          <R2>
             <p>
-              This was made using:<br />
-              Frontend:HTML,CSS,JavaScript<br />
-              Backend:PHP,mySQL<br /><br />
+              Listening music <br />
+              Painting<br />
+              Learn something new<br />
+              Playing with Daisy<br />
+              Watch entertaining videos<br />
+              Do some thing creative(Origami,sketch,logo designing)
             </p>
-            <a href="http://mykproject.000webhostapp.com/index.html"
-              >Go to site</a
-            >
-          </projectcard>
-          <projectcard id="p2">
-            <imageHolder
-              ><wrp>
-                <img
-                  src="Resources/Images/glsChatbot.png"
-                  alt="projects image"
-                />
-                <img
-                  src="Resources/Images/glsChatbot2.png"
-                  alt="projects image"
-                />
-                <img
-                  src="Resources/Images/glsChatbot3.png"
-                  alt="projects image"
-                />
-                <img
-                  src="Resources/Images/glsChatbot4.png"
-                  alt="projects image"
-                />
-                <img
-                  src="Resources/Images/glsChatbot5.png"
-                  alt="projects image"
-                />
-              </wrp>
-            </imageHolder>
+          </R2>
 
-            <h3>Chat bot</h3>
-            <hr />
-            <br />
-            <p>
-              This was made using:<br />
-              Frontend:HTML,CSS,JavaScript<br />
-              Backend:Python,JSON,mySQL,Flask
-            </p>
-          </projectcard>
-          <projectcard id="p3">
-            <img src="Resources/Images/glslogo.png" alt="projects image" />
-            <h3>GLS ICT website</h3>
-            <hr />
-            <br />
-            <p>
-              This was made using:<br />
-              Frontend:HTML,CSS,JAVASCRIPT<br />
-              Backend:PHP,mySql
-            </p>
-          </projectcard>
-        </innerContainer2>
-      </div>
-      <rocket>
-        <img
-          src="Resources/Images/rocket.gif"
-          alt="rocket"
-          id="rocket"
-          class="rstay"
-        />
-      </rocket>
-      <launchpad>
-        <img src="Resources/Images/launchpad.png" alt="launchpad" id="pad" />
-      </launchpad>
-      <!-- for launching rocket adding class with animation to it -->
-      <script>
-        var r = document.getElementById("rocket");
+          <Hobby1>
+            <img src="Resources/Images/phone.png" />
+            <div class="inner1">
+              <img src="Resources/Images/2.png" />
+              <img src="Resources/Images/play.gif" id="playmusic" />
+              <audio id="Song">
+                <source
+                  src="Resources/music/the-score-legend.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+              <div class="inner2">
+                <img
+                  src="Resources/Images/1.png"
+                  onclick="check()"
+                  class="imgg"
+                  id="img2"
+                />
+              </div>
+            </div>
+          </Hobby1>
+          <!-- -----------------SCRIPT FOR MUSIC------- -->
+          <script>
+            var button = document.getElementById("playmusic");
+            var Song = document.getElementById("Song");
+            button.addEventListener("click", function () {
+              if (Song.paused) {
+                Song.play();
+                button.src = "Resources/Images/pause.gif";
+              } else {
+                Song.pause();
+                button.src = "Resources/Images/play.gif";
+              }
+            });
+          </script>
 
-        var pad = document.getElementById("pad");
-        pad.addEventListener("click", function () {
-          r.classList.add("rlaunch");
-          setTimeout(function () {
-            r.classList.remove("rlaunch");
-          }, 4000);
-        });
-      </script>
-    </container>
+          <Hobby2>
+            <a href="https://kuldeepbaral.wixsite.com/kuldeep-art/gallery">
+              <img src="Resources/Images/artist.png"
+            /></a>
+          </Hobby2>
 
-    <!-- ---------------------------------Hobbies -->
-    <container id="Hobbies">
-      <h1>Hobbies</h1>
-      <main>
-        <R2>
-          <p>
-            Listening music <br />
-            Painting<br />
-            Learn something new<br />
-            Playing with Daisy<br />
-            Watch entertaining videos<br />
-            Do some thing creative(Origami,sketch,logo designing)
-          </p>
-        </R2>
-
-        <Hobby1>
-          <img src="Resources/Images/phone.png" />
-          <div class="inner1">
-            <img src="Resources/Images/2.png" />
-            <img src="Resources/Images/play.gif" id="playmusic" />
-            <audio id="Song">
+          <Hobby3>
+            <img id="DaisyB" src="Resources/Images/daisy.png" />
+            <audio id="Barks">
               <source
-                src="Resources/music/the-score-legend.mp3"
+                src="Resources/music/dog_barking-trimed.mp3"
                 type="audio/mpeg"
               />
             </audio>
-            <div class="inner2">
-              <img
-                src="Resources/Images/1.png"
-                onclick="check()"
-                class="imgg"
-                id="img2"
-              />
-            </div>
-          </div>
-        </Hobby1>
-        <!-- -----------------SCRIPT FOR MUSIC------- -->
-        <script>
-          var button = document.getElementById("playmusic");
-          var Song = document.getElementById("Song");
-          button.addEventListener("click", function () {
-            if (Song.paused) {
-              Song.play();
-              button.src = "Resources/Images/pause.gif";
-            } else {
-              Song.pause();
-              button.src = "Resources/Images/play.gif";
-            }
-          });
-        </script>
+          </Hobby3>
+          <script>
+            var DaisyB = document.getElementById("DaisyB");
+            var Barks = document.getElementById("Barks");
+            DaisyB.addEventListener("click", function () {
+              DaisyB.classList.add("updown");
+              Barks.play();
+              setTimeout(function () {
+                DaisyB.classList.remove("updown");
+              }, 1000);
+            });
+          </script>
+          <Hobbyy3></Hobbyy3>
 
-        <Hobby2>
-          <a href="https://kuldeepbaral.wixsite.com/kuldeep-art/gallery">
-            <img src="Resources/Images/artist.png"
-          /></a>
-        </Hobby2>
+          <Hobby4>
+            <img src="Resources/Images/entertain1.png" />
+          </Hobby4>
 
-        <Hobby3>
-          <img id="DaisyB" src="Resources/Images/daisy.png" />
-          <audio id="Barks">
-            <source
-              src="Resources/music/dog_barking-trimed.mp3"
-              type="audio/mpeg"
-            />
-          </audio>
-        </Hobby3>
-        <script>
-          var DaisyB = document.getElementById("DaisyB");
-          var Barks = document.getElementById("Barks");
-          DaisyB.addEventListener("click", function () {
-            DaisyB.classList.add("updown");
-            Barks.play();
-            setTimeout(function () {
-              DaisyB.classList.remove("updown");
-            }, 1000);
-          });
-        </script>
-        <Hobbyy3></Hobbyy3>
-
-        <Hobby4>
-          <img src="Resources/Images/entertain1.png" />
-        </Hobby4>
-
-        <Hobby5>
-          <img id="birdd" src="Resources/Images/OriBird.png" />
-        </Hobby5>
-        <script>
-          var bird = document.getElementById("birdd");
-          bird.addEventListener("click", function () {
-            bird.classList.add("fly");
-            setTimeout(function () {
-              bird.classList.remove("fly");
-            }, 3000);
-          });
-        </script>
-        <Hobbyy4>
-          <img src="Resources/Images/entertain2.png" />
-        </Hobbyy4>
-      </main>
-    </container>
-    <script>
-      var val = true;
-      function check() {
-        var two = document.getElementById("img2");
-        if (val) {
-          two.setAttribute("class", "img2");
-          val = false;
-        } else {
-          two.setAttribute("class", "imgg");
-          val = true;
+          <Hobby5>
+            <img id="birdd" src="Resources/Images/OriBird.png" />
+          </Hobby5>
+          <script>
+            var bird = document.getElementById("birdd");
+            bird.addEventListener("click", function () {
+              bird.classList.add("fly");
+              setTimeout(function () {
+                bird.classList.remove("fly");
+              }, 3000);
+            });
+          </script>
+          <Hobbyy4>
+            <img src="Resources/Images/entertain2.png" />
+          </Hobbyy4>
+        </main>
+      </container>
+      <script>
+        var val = true;
+        function check() {
+          var two = document.getElementById("img2");
+          if (val) {
+            two.setAttribute("class", "img2");
+            val = false;
+          } else {
+            two.setAttribute("class", "imgg");
+            val = true;
+          }
         }
-      }
-    </script>
+      </script>
 
-    <!-- <container id="Additional">
+      <!-- <container id="Additional">
            Additional
 
         </container> -->
-    <container id="Contactinfo">
-      <projectcard>
-        <img src="Resources/Images/me4.jpg" id="pro" />
-        <h3>
-          Baral Kuldeep<br />
-          (🪖Georgian (R.M.S Chail))
-        </h3>
-        <hr />
-        <br />
+      <container id="Contactinfo">
+        <projectcard>
+          <back></back><back2></back2>
+          <img src="Resources/Images/me4.jpg" id="pro" />
+          <h3>
+            Baral Kuldeep<br />
+            (🪖Georgian (R.M.S Chail))
+          </h3>
+          <hr />
+          <br />
 
-        <p>
-          🧑‍💻MCA Graduate<br />
-          😎In progress from Frontend developer to Full Stack <br />
-        </p>
-        <handles>
-          <handle
-            ><a
-              id="hndl"
-              href="https://www.linkedin.com/in/kuldeep-baral-397475152/"
-              ><img
-                class="handlelogo"
-                src="Resources/Images/linkedin.png"
-              />Linkedin</a
-            ></handle
-          >
-          <handle
-            ><a id="hndl" href="https://www.instagram.com/woh_ajnabiii/"
-              ><img
-                class="handlelogo"
-                src="Resources/Images/instagram.png"
-              />instagram</a
-            ></handle
-          >
-          <handle
-            ><a id="hndl" href="mailto:kuldeepbaral007@gmail.com"
-              ><img
-                class="handlelogo"
-                src="Resources/Images/gmail.png"
-              />Gmail</a
-            ></handle
-          >
-        </handles>
-      </projectcard>
+          <p>
+            🧑‍💻MCA Graduate<br />
+            😎In progress from Frontend developer to Full Stack <br />
+          </p>
+          <handles>
+            <handle
+              ><a
+                id="hndl"
+                href="https://www.linkedin.com/in/kuldeep-baral-397475152/"
+                ><img
+                  class="handlelogo"
+                  src="Resources/Images/linkedin.png"
+                />Linkedin</a
+              ></handle
+            >
+            <handle
+              ><a id="hndl" href="https://www.instagram.com/woh_ajnabiii/"
+                ><img
+                  class="handlelogo"
+                  src="Resources/Images/instagram.png"
+                />instagram</a
+              ></handle
+            >
+            <handle
+              ><a id="hndl" href="mailto:kuldeepbaral007@gmail.com"
+                ><img
+                  class="handlelogo"
+                  src="Resources/Images/gmail.png"
+                />Gmail</a
+              ></handle
+            >
+          </handles>
+        </projectcard>
 
-      <!-- </innerContainer2> -->
-      <footer>
-        <Cimg
-          ><a href="Resources/music/GTA San Andreas - BGM.mp3"
-            ><img src="Resources/Images/work-in-progress (1).png" /></a
-        ></Cimg>
-        <marquee
-          >THANK YOU //Credits:Icons from:
-          <a href="https://www.flaticon.com/">flaticon</a>
-          <a href="https://icons8.com/illustrations">icons8</a>
-          <a
-            href="https://www.freepik.com/free-vector/flat-creativity-concept-illustration_14620625.htm#query=skills&position=0&from_view=search&track=sph"
-            >Image by pikisuperstar</a
-          >
-          on Freepik
-          <a
-            href="https://www.freepik.com/free-vector/flat-creativity-concept-illustration_14620625.htm#query=skills&position=0&from_view=search&track=sph"
-            >Image by pikisuperstar</a
-          >
-          on Freepik
-          <a
-            href="https://www.flaticon.com/free-icons/aeroplane"
-            title="aeroplane icons"
-            >Aeroplane icons created by Freepik - Flaticon</a
-          >
-          Illustration by
-          <a href="https://icons8.com/illustrations/author/A7iGlOUD5Neq"
-            >dekob2</a
-          >
-          from <a href="https://icons8.com/illustrations">Ouch!</a> Illustration
-          by
-          <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA"
-            >Icons 8</a
-          >
-          from <a href="https://icons8.com/illustrations">Ouch!</a>
-          <a
-            href="https://www.flaticon.com/free-animated-icons/pause"
-            title="pause animated icons"
-            >Pause animated icons created by Freepik - Flaticon</a
-          >
-          <a
-            href="https://www.flaticon.com/free-animated-icons/music"
-            title="music animated icons"
-            >Music animated icons created by Freepik - Flaticon</a
-          >
-        </marquee>
-      </footer>
-    </container>
+        <!-- </innerContainer2> -->
+        <footer>
+          <Cimg
+            ><a href="Resources/music/GTA San Andreas - BGM.mp3"
+              ><img src="Resources/Images/work-in-progress (1).png" /></a
+          ></Cimg>
+          <marquee
+            >THANK YOU //Credits:Icons from:
+            <a href="https://www.flaticon.com/">flaticon</a>
+            <a href="https://icons8.com/illustrations">icons8</a>
+            <a
+              href="https://www.freepik.com/free-vector/flat-creativity-concept-illustration_14620625.htm#query=skills&position=0&from_view=search&track=sph"
+              >Image by pikisuperstar</a
+            >
+            on Freepik
+            <a
+              href="https://www.freepik.com/free-vector/flat-creativity-concept-illustration_14620625.htm#query=skills&position=0&from_view=search&track=sph"
+              >Image by pikisuperstar</a
+            >
+            on Freepik
+            <a
+              href="https://www.flaticon.com/free-icons/aeroplane"
+              title="aeroplane icons"
+              >Aeroplane icons created by Freepik - Flaticon</a
+            >
+            Illustration by
+            <a href="https://icons8.com/illustrations/author/A7iGlOUD5Neq"
+              >dekob2</a
+            >
+            from
+            <a href="https://icons8.com/illustrations">Ouch!</a> Illustration by
+            <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA"
+              >Icons 8</a
+            >
+            from <a href="https://icons8.com/illustrations">Ouch!</a>
+            <a
+              href="https://www.flaticon.com/free-animated-icons/pause"
+              title="pause animated icons"
+              >Pause animated icons created by Freepik - Flaticon</a
+            >
+            <a
+              href="https://www.flaticon.com/free-animated-icons/music"
+              title="music animated icons"
+              >Music animated icons created by Freepik - Flaticon</a
+            >
+          </marquee>
+        </footer>
+      </container>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script>
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("#main"),
+        smooth: true,
+      });
+    </script> -->
+    <!-- ul>(li>a)*4 -->
   </body>
 </html>
