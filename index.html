@@ -48,9 +48,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="/script.js"></script>
   </head>
 
-  <body>
+  <body id="body">
+    <div class="cursor" id="cursor"></div>
     <div id="main">
       <nav>
         <logo><img src="Resources/Images/bkLogo.png" /></logo>
@@ -68,6 +71,22 @@
         </ul>
       </nav>
       <script>
+         var yaxis=0;
+         var scrollposition=0;
+ const crr=document.querySelector("#cursor");
+document.querySelector("#body").addEventListener("mousemove",function(dets)
+{
+  yaxis=dets.y;
+    crr.style.top=dets.y+scrollposition+"px";
+    
+    crr.style.left=dets.x+"px";
+})
+function getscroll()
+{
+scrollposition=window.scrollY;
+crr.style.top=scrollposition+yaxis+"px";
+}
+document.addEventListener("scroll",getscroll)
         function hidee() {
           document.getElementById("clickk").checked = false;
         }
@@ -81,11 +100,14 @@
         <p class="h">
           Hello, My name is <br />Baral Kuldeep<br />
           <span style="font-size: 1rem">(Frontend Developer)</span
-          ><a href="Resources/baral kuldeep.pdf" class="resume"
+          ><span><a href="Resources/baral kuldeep.pdf" class="resume"  target="_blank"
             >Download Resume</a
-          >
+          ><a href="https://github.com/KuldeepBaral87" class="resume" style="width:fit-content; border-radius: 50%; height:fit-content;" target="_blank"
+          ><i class="ri-github-fill"></i></a
+        >
+        <a href="https://www.linkedin.com/in/kuldeep-baral-397475152/" class="resume" style="width:fit-content; border-radius: 50%; height:fit-content;" target="_blank"
+        ><i class="ri-linkedin-box-fill"></i></a></span>
         </p>
-
         <div class="appeal1">
           <div class="appeal"></div>
           <div class="appeal"></div>
@@ -155,6 +177,21 @@
         <div class="temp">
           <h1>Projects</h1>
           <innerContainer2>
+            <projectcard id="p4">
+              <img src="Resources/Images/upsilon.png" alt="projects image" />
+              <h3>Upsilon website (It*)</h3>
+              <hr />
+              <br />
+              <p>
+                This was made using:<br />
+                Frontend:HTML,CSS,JAVASCRIPT<br />
+            
+                *Interview test
+              </p>
+              <a href="https://kuldeepbaral87.github.io/Practice/"
+                >Go to site</a
+              >
+            </projectcard>
             <projectcard id="p1">
               <imageHolder
                 ><wrp>
@@ -229,6 +266,7 @@
                 Backend:PHP,mySql
               </p>
             </projectcard>
+           
           </innerContainer2>
         </div>
         <rocket>
