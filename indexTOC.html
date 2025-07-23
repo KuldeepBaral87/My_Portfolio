@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOC Generator</title>
+    <style>
+      :root {
+        --primary: #4a90e2;
+        --background: #f5f7fa;
+        --text: #2c3e50;
+        --success: #27ae60;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        line-height: 1.6;
+        background: var(--background);
+        color: var(--text);
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: var(--primary);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .input-section,
+      .output-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 200px;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        font-family: inherit;
+        font-size: 1rem;
+        resize: vertical;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+      }
+
+      button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: opacity 0.3s;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      .output-section {
+        display: none;
+      }
+
+      .output-section.show {
+        display: block;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .tab {
+        padding: 0.5rem 1rem;
+        background: #eee;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+
+      .copy-button {
+        background: var(--success);
+        margin-top: 1rem;
+      }
+
+      .preview {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      .preview ul {
+        list-style: none;
+        padding-left: 1rem;
+      }
+
+      .preview a {
+        color: var(--text);
+        text-decoration: none;
+        display: block;
+        padding: 0.3rem 0;
+      }
+
+      .preview a:hover {
+        color: var(--primary);
+      }
+
+      .instructions {
+        margin-bottom: 1rem;
+        color: #666;
+      }
+      #newspaper::first-letter {
+        initial-letter: 2;
+        color: goldenrod;
+        margin-right: 10px;
+        padding: 5px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Table of Contents Generator</h1>
+
+      <div class="input-section">
+        <p class="instructions">Enter your headings, one per line:</p>
+        <textarea
+          id="input"
+          placeholder="Enter your headings here...
+Example:
+Why Ahmedabad Needs Strong SEO
+Unique Challenges in Ahmedabad's Digital Market
+Proven SEO Strategies for Local Success"
+        ></textarea>
+        <button onclick="generateTOC()">Generate TOC</button>
+      </div>
+
+      <div class="output-section" id="outputSection">
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('preview')">
+            Preview
+          </button>
+          <button class="tab" onclick="showTab('code')">HTML Code</button>
+        </div>
+
+        <div id="preview" class="preview">
+          <!-- Preview content will go here -->
+        </div>
+
+        <div id="code" style="display: none">
+          <pre id="codeOutput"></pre>
+          <button class="copy-button" onclick="copyToClipboard()">
+            Copy HTML
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <p id="newspaper" style="width: 50%">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum nulla
+        eos voluptatum iste ratione non consequuntur, fugit repellat distinctio
+        aspernatur reiciendis quo. Vero illum velit voluptatibus ipsum! Impedit,
+        dolorem quas!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Rerum nulla eos voluptatum iste ratione non consequuntur, fugit repellat
+        distinctio aspernatur reiciendis quo. Vero illum velit voluptatibus
+        ipsum! Impedit, dolorem quas!
+      </p>
+    </div>
+    <script>
+      function generateTOC() {
+        const input = document.getElementById("input").value;
+        const lines = input.split("\n").filter((line) => line.trim());
+
+        let html = '<h3 class="toc-title">Table of Contents</h3>\n<ul>\n';
+
+        lines.forEach((line, index) => {
+          if (line.trim()) {
+            const sanitizedLine = line.trim();
+            html += `  <li><a href="#sec-${
+              index + 1
+            }" class="content-link">${sanitizedLine}</a></li>\n`;
+          }
+        });
+
+        html += "</ul>";
+
+        // Update preview
+        document.getElementById("preview").innerHTML = html;
+
+        // Update code view
+        document.getElementById("codeOutput").textContent = html;
+
+        // Show output section
+        document.getElementById("outputSection").classList.add("show");
+      }
+
+      function showTab(tabName) {
+        // Update tab buttons
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+        event.target.classList.add("active");
+
+        // Show selected content
+        document.getElementById("preview").style.display =
+          tabName === "preview" ? "block" : "none";
+        document.getElementById("code").style.display =
+          tabName === "code" ? "block" : "none";
+      }
+
+      function copyToClipboard() {
+        const code = document.getElementById("codeOutput").textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          const button = document.querySelector(".copy-button");
+          button.textContent = "Copied!";
+          setTimeout(() => {
+            button.textContent = "Copy HTML";
+          }, 2000);
+        });
+      }
+
+      // Initialize with example text
+      document.getElementById("input").value = `Why Ahmedabad Needs Strong SEO
+Unique Challenges in Ahmedabad's Digital Market
+Proven SEO Strategies for Local Success
+Implementation Guide
+Success Stories
+Next Steps for Your Business`;
+    </script>
+  </body>
+</html>

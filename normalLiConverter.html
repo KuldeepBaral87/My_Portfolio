@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Text to List Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      textarea {
+        width: 100%;
+        min-height: 150px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      btn {
+        padding: 20px 10px;
+        background-color: black;
+        color: white;
+        &:hover {
+          background-color: #4caf50;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <btn>Click me </btn>
+      <h2>Text to List Converter</h2>
+      <textarea
+        id="input"
+        placeholder="Enter your text here...&#10;Example:&#10;1. **Heading**: Some content related to it.&#10;2. **Heading**: Some content related to it."
+      ></textarea>
+      <button onclick="convertText()">Convert</button>
+      <textarea id="output" readonly></textarea>
+    </div>
+
+    <script>
+      function convertText() {
+        const input = document.getElementById("input").value;
+        const lines = input.trim().split("\n");
+        let isOrdered = false;
+        let result = "";
+
+        // Check if the first line starts with a number
+        if (lines[0].match(/^\d+\./)) {
+          isOrdered = true;
+        }
+
+        // Start the appropriate list type
+        result += isOrdered ? "<ol>\n" : "<ul>\n";
+
+        // Process each line
+        lines.forEach((line) => {
+          // Remove numbers and dots if present
+          line = line.replace(/^\d+\.\s*/, "");
+
+          // Split the line into heading and content
+          const parts = line.split(":");
+          if (parts.length >= 2) {
+            const heading = parts[0].replace(/\*\*/g, "").trim(); // Remove ** from heading
+            const content = parts.slice(1).join(":").trim(); // Join back with : in case content contains colons
+            // Create list item with proper strong tags
+            result += `  <li><strong>${heading}</strong>: ${content}</li>\n`;
+          } else {
+            // If no colon found, just wrap the whole line
+            result += `  <li>${line}</li>\n`;
+          }
+        });
+
+        // Close the list
+        result += isOrdered ? "</ol>" : "</ul>";
+
+        // Display result
+        document.getElementById("output").value = result;
+      }
+    </script>
+  </body>
+</html>
